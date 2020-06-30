@@ -1,0 +1,117 @@
+ @charset "utf-8";
+    body{
+      font-family:Verdana, "ＭＳ Ｐゴシック", sans-serif;
+    }
+  
+    h1{
+      margin:0px;
+      padding:0px;
+    }
+
+    .top-h1{
+      text-align:center;
+      padding-top:15px;
+      padding-bottom:15px;
+      
+    }
+    header{
+      background:#CCFFFF;
+      height:200px;
+      width:100%;
+    }
+    footer{
+      background:#CCFFFF;
+      height:100px;
+      width:100%;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      color:silver;
+    }
+
+ 
+    h2{
+      text-align:center;
+    }
+
+    fieldset{
+      text-align:center;
+      margin-left:20px;
+      margin-right:20px;
+    }
+.team-seach-button{
+  margin-top:15px;
+  width:15%;
+  height:30px;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+
+button.link-style-btn{
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #1E90FF;
+}
+button.link-style-btn:hover{
+  text-decoration: underline;
+  color: #002080;
+}
+
+.header-nav ul{    
+    list-style: none;
+    display:flex;
+    justify-content: center;
+    background-color:gray;
+    flex-wrap: nowrap;
+}
+
+ul .header-nav-list{
+  background-color: rgba(135, 206, 235,1);
+  color:white;
+  padding:10px 20px;
+  margin:2.5px;
+  white-space: nowrap;
+}
+.header-nav-list a{
+  text-decoration: none;
+  color:white;
+}
+.header-nav-list a:hover{
+  color:blue;
+}
+.logo{
+  height40px;
+  width:40px;
+  vertical-align: middle;
+}
+
+.new-info{
+  border:solid 2px gray;
+  margin-left:20px;
+  margin-right:20px;
+  margin-bottom:20px;
+}
+
+.new-info ul{
+  list-style: none;
+  text-align:center;
+}
+.new-info li{
+  border-bottom:solid 1px black;
+  margin-bottom:2px;
+  padding-bottom:1px;
+}
+.new-info a{
+  text-decoration: none;
+}
+.new-info a:hover{
+  cursor:pointer;
+}
+
+
+.top-section{
+  margin-top:50px;
+  margin-bottom:20px;
+}
