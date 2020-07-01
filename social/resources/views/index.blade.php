@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.default')
 @section('content')
 <section class="top-section">
   <h2>練習場所を探そう!!!</h2>
@@ -130,8 +130,5 @@
   </ul>
   </div>
   </section>
-</body>
-</html>
-
 @endsection
 

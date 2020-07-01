@@ -115,3 +115,18 @@ ul .header-nav-list{
   margin-top:50px;
   margin-bottom:20px;
 }
+
+/*practice_info_list */
+
+
+.practice-space-list{
+
+width:80%;
+background-color: greenyellow;
+margin-bottom:10px;
+
+}
+
+.practice li{
+  list-style: none;
+}
