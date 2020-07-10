@@ -9,23 +9,6 @@ class UserController extends Controller
 {
     //
 
-    public function index(){
-        $users = new User();
-        var_dump($users);
-
-    //     // $image = new Image();
-
-    //     // $images = Image::where('title',  'like', "%{$search_word}%")->paginate(10);
-
-    //     // $image = DB::table('images')->where('path', $path)->first();
-
-    //     // $image->save();
-    }
-
-
-//TODO requestバリデーション
-
-
 
     //ユーザ新規登録
     public function signUp(Request $request){
@@ -42,20 +25,64 @@ class UserController extends Controller
     //ユーザ認証
     public function signIn(Request $request){
        
-
-        //session処理
-
-
-        $user = User::where('email', $request->email)->where('password', $request->pass)->first();
-        
-
-        if($user === NULL){
-            return view('sign_in_page', [
-                'sign_in_failure'=> 'ログイン失敗'
-            ]);
-        }else{
+        //sessionがセットされていれば
+        if ($request->session()->has('user')) {
+            
+            //ログインに飛ばす
             //todo session
-            return view('index');
+            $s_id = $request->session()->regenerate();
+            return view('index',  [
+                "id" => $s_id
+            ]);            
+        }else{
+
+            //sessionがセットされていなければ
+            $user = User::where('email', $request->email)->where('password', $request->pass)->first();
+            
+            if($user === NULL){
+                return view('sign_in_page', [
+                    'sign_in_failure'=> 'ログイン失敗'
+                ]);
+            }else{
+
+                $request->session()->regenerate();
+                $request->session()->push('user', $user->id);
+                $request->session()->push('user', $user->email);
+                return view('index'); 
+            }
         }
+    }
+
+       public function sign_out(Request $request){
+
+        $request->session()->flush();
+
+        return view('index'); 
+       }
+
+
+       public function profile(Request $request){
+
+            if ($request->session()->has('user')) {
+              return view('profile');
+              }else{
+              return view('sign_in_page');
+             }
+        }
+
+    public function create_team(Request $request){
+         if ($request->session()->has('user')) {
+             return view('create_team');
+         }else{
+             return view('sign_in_page');
+         } 
+    }
+
+    public function practice_partner(Request $request){
+        if ($request->session()->has('user')) {
+             return view('practice_partner');
+        }else{
+           return view('sign_in_page');
+         } 
     }
 }

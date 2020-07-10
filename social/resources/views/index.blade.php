@@ -1,58 +1,65 @@
 @extends('layouts.default')
 @section('content')
+
+@if (Session::has('key'))
+{{ Session::get('key') }}
+@endif
+@if (Session::has('user'))
+
+@endif
 <section class="top-section">
   <h2>練習場所を探そう!!!</h2>
   <div class="prefecture-list"> 
   <form action="{{url('/practice_info_list')}}">
   <fieldset>
   <legend>都道府県一覧</legend>
-      <button class="link-style-btn" name="prefecture" value="hokkaido">北海道</button>
-      <button class="link-style-btn" name="prefecture" value="aomori">青森</button>
-      <button class="link-style-btn" name="prefecture" value="iwate">岩手県</button>
-      <button class="link-style-btn" name="prefecture" value="miyagi">宮城県</button>
-      <button class="link-style-btn" name="prefecture" value="akita">秋田県</button>
-      <button class="link-style-btn" name="prefecture" value="yamagata">山形県</button>
-      <button class="link-style-btn" name="prefecture" value="fukushima">福島県</button>
-      <button class="link-style-btn" name="prefecture" value="ibaraki">茨城県</button>
-      <button class="link-style-btn" name="prefecture" value="tochigi">栃木県</button>
-      <button class="link-style-btn" name="prefecture" value="gunnma">群馬県</button>
-      <button class="link-style-btn" name="prefecture" value="saitama">埼玉県</button>
-      <button class="link-style-btn" name="prefecture" value="tiba">千葉県</button>
-      <button class="link-style-btn" name="prefecture" value="tokyo">東京都</button>
-      <button class="link-style-btn" name="prefecture" value="kanagawa">神奈川県</button>
-      <button class="link-style-btn" name="prefecture" value="niigata">新潟県</button>
-      <button class="link-style-btn" name="prefecture" value="toyama">富山県</button>
-      <button class="link-style-btn" name="prefecture" value="ishikawa">石川県</button>
-      <button class="link-style-btn" name="prefecture" value="fukui">福井県</button>
-      <button class="link-style-btn" name="prefecture" value="yamanashi">山梨県</button>
-      <button class="link-style-btn" name="prefecture" value="nagano">長野県</button>
-      <button class="link-style-btn" name="prefecture" value="gifu">岐阜県</button>
-      <button class="link-style-btn" name="prefecture" value="shizuoka">静岡県</button>
-      <button class="link-style-btn" name="prefecture" value="aichi">愛知県</button>
-      <button class="link-style-btn" name="prefecture" value="mie">三重県</button>
-      <button class="link-style-btn" name="prefecture" value="shiga">滋賀県</button>
-      <button class="link-style-btn" name="prefecture" value="kyoto">京都府</button>
-      <button class="link-style-btn" name="prefecture" value="oosaka">大阪府</button>
-      <button class="link-style-btn" name="prefecture" value="hyogo">兵庫県</button>
-      <button class="link-style-btn" name="prefecture" value="nara">奈良県</button>
-      <button class="link-style-btn" name="prefecture" value="wakayama">和歌山県</button>
-      <button class="link-style-btn" name="prefecture" value="tottori">鳥取県</button>
-      <button class="link-style-btn" name="prefecture" value="simane">島根県</button>
-      <button class="link-style-btn" name="prefecture" value="okayama">岡山県</button>
-      <button class="link-style-btn" name="prefecture" value="hiroshima">広島県</button>
-      <button class="link-style-btn" name="prefecture" value="yamaguchi">山口県</button>
-      <button class="link-style-btn" name="prefecture" value="tokushima">徳島県</button>
-      <button class="link-style-btn" name="prefecture" value="kagawa">香川県</button>
-      <button class="link-style-btn" name="prefecture" value="ehime">愛媛県</button>
-      <button class="link-style-btn" name="prefecture" value="kochi">高知県</button>
-      <button class="link-style-btn" name="prefecture" value="fukuoka">福岡県</button>
-      <button class="link-style-btn" name="prefecture" value="saga">佐賀県</button>
-      <button class="link-style-btn" name="prefecture" value="nagasaki">長崎県</button>
-      <button class="link-style-btn" name="prefecture" value="kumamoto">熊本県</button>
-      <button class="link-style-btn" name="prefecture" value="oita">大分県</button>
-      <button class="link-style-btn" name="prefecture" value="miyazaki">宮崎県</button>
-      <button class="link-style-btn" name="prefecture" value="kagoshima">鹿児島県</button>
-      <button class="link-style-btn" name="prefecture" value="okinawa">沖縄県</button>
+      <button class="link-style-btn" name="prefecture" value="北海道">北海道</button>
+      <button class="link-style-btn" name="prefecture" value="青森県">青森県</button>
+      <button class="link-style-btn" name="prefecture" value="岩手県">岩手県</button>
+      <button class="link-style-btn" name="prefecture" value="宮城県">宮城県</button>
+      <button class="link-style-btn" name="prefecture" value="秋田県">秋田県</button>
+      <button class="link-style-btn" name="prefecture" value="山形県">山形県</button>
+      <button class="link-style-btn" name="prefecture" value="福島県">福島県</button>
+      <button class="link-style-btn" name="prefecture" value="茨城県">茨城県</button>
+      <button class="link-style-btn" name="prefecture" value="栃木県">栃木県</button>
+      <button class="link-style-btn" name="prefecture" value="群馬県">群馬県</button>
+      <button class="link-style-btn" name="prefecture" value="埼玉県">埼玉県</button>
+      <button class="link-style-btn" name="prefecture" value="千葉県">千葉県</button>
+      <button class="link-style-btn" name="prefecture" value="東京都">東京都</button>
+      <button class="link-style-btn" name="prefecture" value="神奈川県">神奈川県</button>
+      <button class="link-style-btn" name="prefecture" value="新潟県">新潟県</button>
+      <button class="link-style-btn" name="prefecture" value="富山県">富山県</button>
+      <button class="link-style-btn" name="prefecture" value="石川県">石川県</button>
+      <button class="link-style-btn" name="prefecture" value="福井県">福井県</button>
+      <button class="link-style-btn" name="prefecture" value="山梨県">山梨県</button>
+      <button class="link-style-btn" name="prefecture" value="長野県">長野県</button>
+      <button class="link-style-btn" name="prefecture" value="岐阜県">岐阜県</button>
+      <button class="link-style-btn" name="prefecture" value="静岡県">静岡県</button>
+      <button class="link-style-btn" name="prefecture" value="愛知県">愛知県</button>
+      <button class="link-style-btn" name="prefecture" value="三重県">三重県</button>
+      <button class="link-style-btn" name="prefecture" value="滋賀県">滋賀県</button>
+      <button class="link-style-btn" name="prefecture" value="京都府">京都府</button>
+      <button class="link-style-btn" name="prefecture" value="大阪府">大阪府</button>
+      <button class="link-style-btn" name="prefecture" value="兵庫県">兵庫県</button>
+      <button class="link-style-btn" name="prefecture" value="奈良県">奈良県</button>
+      <button class="link-style-btn" name="prefecture" value="和歌山県">和歌山県</button>
+      <button class="link-style-btn" name="prefecture" value="鳥取県">鳥取県</button>
+      <button class="link-style-btn" name="prefecture" value="島根県">島根県</button>
+      <button class="link-style-btn" name="prefecture" value="岡山県">岡山県</button>
+      <button class="link-style-btn" name="prefecture" value="広島県">広島県</button>
+      <button class="link-style-btn" name="prefecture" value="山口県">山口県</button>
+      <button class="link-style-btn" name="prefecture" value="徳島県">徳島県</button>
+      <button class="link-style-btn" name="prefecture" value="香川県">香川県</button>
+      <button class="link-style-btn" name="prefecture" value="愛媛県">愛媛県</button>
+      <button class="link-style-btn" name="prefecture" value="高知県">高知県</button>
+      <button class="link-style-btn" name="prefecture" value="福岡県">福岡県</button>
+      <button class="link-style-btn" name="prefecture" value="佐賀県">佐賀県</button>
+      <button class="link-style-btn" name="prefecture" value="長崎県">長崎県</button>
+      <button class="link-style-btn" name="prefecture" value="熊本県">熊本県</button>
+      <button class="link-style-btn" name="prefecture" value="大分県">大分県</button>
+      <button class="link-style-btn" name="prefecture" value="宮崎県">宮崎県</button>
+      <button class="link-style-btn" name="prefecture" value="鹿児島県">鹿児島県</button>
+      <button class="link-style-btn" name="prefecture" value="沖縄県">沖縄県</button>
 </fieldset>
 </div>
 </form>
@@ -64,56 +71,57 @@
   <legend>チーム検索</legend>
   <p><label for="team_name">チーム名:<input type="text" id="team_name" name="team_name"></label></p>
 
-<label for="prefecture">県を選択してください:</label>
-<select id="prefecture" name="prefecture">
-<option value="de">北海道</option>
-<option value="de">青森県</option>
-<option value="de">岩手県</option>
-<option value="de">宮城県</option>
-<option value="de">秋田県</option>
-<option value="de">山形県</option>
-<option value="de">福島県</option>
-<option value="de">茨城県</option>
-<option value="de">栃木県</option>
-<option value="de">群馬県</option>
-<option value="de">埼玉県</option>
-<option value="de">千葉県</option>
-<option value="de">東京都</option>
-<option value="de">神奈川県</option>
-<option value="de">新潟県</option>
-<option value="de">富山県</option>
-<option value="de">石川県</option>
-<option value="de">福井県</option>
-<option value="de">山梨県</option>
-<option value="de">長野県</option>
-<option value="de">岐阜県</option>
-<option value="de">静岡県</option>
-<option value="de">愛知県</option>
-<option value="de">三重県</option>
-<option value="de">滋賀県</option>
-<option value="de">京都府</option>
-<option value="de">大阪府</option>
-<option value="de">兵庫県</option>
-<option value="de">奈良県</option>
-<option value="de">和歌山県</option>
-<option value="de">鳥取県</option>
-<option value="de">島根県</option>
-<option value="de">岡山県</option>
-<option value="de">広島県</option>
-<option value="de">山口県</option>
-<option value="de">徳島県</option>
-<option value="de">香川県</option>
-<option value="de">愛媛県</option>
-<option value="de">高知県</option>
-<option value="de">福岡県</option>
-<option value="de">佐賀県</option>
-<option value="de">長崎県</option>
-<option value="de">熊本県</option>
-<option value="de">大分県</option>
-<option value="de">宮崎県</option>
-<option value="de">鹿児島県</option>
-<option value="de">沖縄県</option>
-</select><br>
+  <p><label for="prefecture">県を選択してください:
+<select name="prefecture"  id="prefecture">
+  <option value="北海道">北海道</option>
+  <option value="青森県">青森県</option>
+  <option value="岩手県">岩手県</option>
+  <option value="宮城県">宮城県</option>
+  <option value="秋田県">秋田県</option>
+  <option value="山形県">山形県</option>
+  <option value="福島県">福島県</option>
+  <option value="茨城県">茨城県</option>
+  <option value="栃木県">栃木県</option>
+  <option value="群馬県">群馬県</option>
+  <option value="埼玉県">埼玉県</option>
+  <option value="千葉県">千葉県</option>
+  <option value="東京都">東京都</option>
+  <option value="神奈川県">神奈川県</option>
+  <option value="新潟県">新潟県</option>
+  <option value="富山県">富山県</option>
+  <option value="石川県">石川県</option>
+  <option value="福井県">福井県</option>
+  <option value="山梨県">山梨県</option>
+  <option value="長野県">長野県</option>
+  <option value="岐阜県">岐阜県</option>
+  <option value="静岡県">静岡県</option>
+  <option value="愛知県">愛知県</option>
+  <option value="三重県">三重県</option>
+  <option value="滋賀県">滋賀県</option>
+  <option value="京都府">京都府</option>
+  <option value="大阪府">大阪府</option>
+  <option value="兵庫県">兵庫県</option>
+  <option value="奈良県">奈良県</option>
+  <option value="和歌山県">和歌山県</option>
+  <option value="鳥取県">鳥取県</option>
+  <option value="島根県">島根県</option>
+  <option value="岡山県">岡山県</option>
+  <option value="広島県">広島県</option>
+  <option value="山口県">山口県</option>
+  <option value="徳島県">徳島県</option>
+  <option value="香川県">香川県</option>
+  <option value="愛媛県">愛媛県</option>
+  <option value="高知県">高知県</option>
+  <option value="福岡県">福岡県</option>
+  <option value="佐賀県">佐賀県</option>
+  <option value="長崎県">長崎県</option>
+  <option value="熊本県">熊本県</option>
+  <option value="大分県">大分県</option>
+  <option value="宮崎県">宮崎県</option>
+  <option value="鹿児島県">鹿児島県</option>
+  <option value="沖縄県">沖縄県</option>
+</select>
+</label></p>
 <button type="submit" class="team-seach-button">検索</button>
 </fieldset>
  </form>

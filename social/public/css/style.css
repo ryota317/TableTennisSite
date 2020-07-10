@@ -82,7 +82,7 @@ ul .header-nav-list{
   color:blue;
 }
 .logo{
-  height40px;
+  height:40px;
   width:40px;
   vertical-align: middle;
 }
@@ -97,6 +97,8 @@ ul .header-nav-list{
 .new-info ul{
   list-style: none;
   text-align:center;
+  padding-left:10px;
+  padding-right:10px;
 }
 .new-info li{
   border-bottom:solid 1px black;
@@ -112,8 +114,10 @@ ul .header-nav-list{
 
 
 .top-section{
-  margin-top:50px;
-  margin-bottom:20px;
+  padding-top:40px;
+  padding-bottom:20px;
+  width:80%;
+  margin: auto;
 }
 
 /*practice_info_list */

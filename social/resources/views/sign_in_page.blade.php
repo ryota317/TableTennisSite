@@ -21,34 +21,21 @@ if(result){ // 確認ダイアログを表示
   </script>
 </head>
 <body>
-  
-
   <fieldset>
   <legend>SignIn</legend>
- 
   <form action="{{ url('/sign_in') }}" method="post">
   @csrf
-
   <p><label for="team_name">メールアドレス:<input type="text" id="team_name" name="email"></label></p>
   <p><label for="team_name">パスワード:<input type="text" id="team_name" name="pass"></label></p>
   <button type="submit">SignIN</button>
   </form>
 </fieldset>
-
-
 <form action="{{url('/')}}" onsubmit="return check()" >
 <button type="submit" >送信テスト</button>
 </form>
-
-  
-
 <form action="{{ url('/sign_up_page')}}">
 新規登録
-
 <button type="submit">こちらから新規登録</button>
 </form>
-
-
-
 </body>
 </html>

@@ -27,9 +27,14 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/practice_info_list', function () {
-    return view('practice_info_list');
-});
+
+
+
+
+
+Route::get('/practice_info_list', 'PracticeController@practice_info_list');
+
+
 
 Route::get('/sign_in_page', function () {
     return view('sign_in_page');
@@ -39,17 +44,20 @@ Route::get('/sign_up_page', function () {
 });
 
 
-Route::get('/profile', function () {
-    return view('profile');
-});
-Route::get('/create_team', function () {
-    return view('create_team');
-});
-Route::get('/practice_partner', function () {
-    return view('practice_partner');
-});
+
+Route::get('/profile', 'UserController@profile');
+Route::get('/create_team', 'UserController@create_team');
+Route::get('/practice_partner', 'UserController@practice_partner');
+
+
+Route::get('/team_search', 'TeamController@team_search');
+
+Route::get('/sign_out', 'UserController@sign_out');
+
+
+Route::post('/practice_partner_post', 'PracticeController@practice_partner_post');
 
 
 
 
-
+Route::post('/create_team', 'TeamController@create_team');
