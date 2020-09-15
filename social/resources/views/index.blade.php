@@ -9,7 +9,7 @@
 @endif
 <section class="top-section">
   <h2>練習場所を探そう!!!</h2>
-  <div class="prefecture-list"> 
+  <div class="prefecture-list">
   <form action="{{url('/practice_info_list')}}">
   <fieldset>
   <legend>都道府県一覧</legend>
@@ -204,4 +204,3 @@
   </div>
   </section>
 @endsection
-

@@ -24,6 +24,14 @@ if(result){ // 確認ダイアログを表示
 <body>
   <header>
   <h1 class="top-h1"><img  class="logo"src="{{ asset('/img/tabletennis_racket.png') }}" alt="">卓球練習サイト<img  class="logo"src="/img/tabletennis_racket.png" alt=""></h1>
+
+  @if (Session::has('user'))
+  <div class="login-user-name">
+  <p>{{ \Carbon\Carbon::now()->format("Y年m月d日") }}
+  {{ \Carbon\Carbon::now()->format("H:i") }}</p>
+  <p>{{ Session::get('user')[1] }}さん</p>
+  </div>
+  @endif
   <div class="header-nav">
   <nav>
   <ul>
@@ -31,14 +39,13 @@ if(result){ // 確認ダイアログを表示
     @if (!Session::has('user'))
     <li class="header-nav-list"><a href="{{ url('/sign_in_page')}}">ログイン</a></li>
     @endif
+    <li class="header-nav-list"><a href="{{ url('/profile')}}">プロフィール</a></li>
+    <li class="header-nav-list"><a href="{{ url('/create_team')}}">チームページ作成</a></li>
+    <li class="header-nav-list"><a href="{{ url('/practice_partner')}}">練習相手募集</a></li>
     @if (Session::has('user'))
     <li class="header-nav-list"><a href="{{ url('/sign_out')}}"
-    onclick="check();">(if)ログアウト</a></li>
+    onclick="check();">ログアウト(キャンセル時の訂正)</a></li>
     @endif
-
-    <li class="header-nav-list"><a href="{{ url('/profile')}}">(if)プロフィール</a></li>
-    <li class="header-nav-list"><a href="{{ url('/create_team')}}">(if)チームページ作成</a></li>
-    <li class="header-nav-list"><a href="{{ url('/practice_partner')}}">(if)練習相手募集</a></li>
   </ul>
   </nav>
  </div>

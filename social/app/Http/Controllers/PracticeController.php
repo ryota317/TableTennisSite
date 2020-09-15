@@ -38,6 +38,8 @@ class PracticeController extends Controller
        
         $practice_list = Practice::where('prefecture', $request->prefecture)->get();
 
-        return view('practice_info_list',['practice_list' => $practice_list ]);
+        $hit = count($practice_list);
+
+        return view('practice_info_list',['practice_list' => $practice_list ,'hit' => $hit ,'prefecture' => $request->prefecture ]);
     }
 }

@@ -47,6 +47,7 @@ class UserController extends Controller
 
                 $request->session()->regenerate();
                 $request->session()->push('user', $user->id);
+                $request->session()->push('user', $user->name);
                 $request->session()->push('user', $user->email);
                 return view('index'); 
             }

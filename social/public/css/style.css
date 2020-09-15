@@ -16,7 +16,7 @@
     }
     header{
       background:#CCFFFF;
-      height:200px;
+      height:300px;
       width:100%;
     }
     footer{
@@ -33,6 +33,16 @@
     h2{
       text-align:center;
     }
+
+    .login-user-name{
+      text-align:right;
+    }
+    .login-user-name p{
+      padding-top:2px;
+      font-size:1.2rem;
+    }
+
+
 
     fieldset{
       text-align:center;
@@ -133,4 +143,31 @@ margin-bottom:10px;
 
 .practice li{
   list-style: none;
+}
+
+
+section.practice{
+  padding: 2em 1em;
+  margin: 30px 100px;
+  /* font-weight: bold; */
+  /* color: #6091d3;文字色 */
+  background: #FFF;
+  border: solid 3px #6091d3;/*線*/
+  border-radius: 10px;/*角の丸み*/
+}
+
+table {
+  border-collapse: collapse;
+}
+table th, table td {
+  border: solid 1px gray;
+  /*実線 1px 黒*/
+}
+
+.th-left{
+  background-color: #CCFFFF;
+}
+.search-hit{
+  font-size:25px;
+  text-align: center;
 }

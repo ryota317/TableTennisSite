@@ -1,49 +1,61 @@
 @extends('layouts.default')
 @section('content')
-この県の練習一覧
-<ul class="practice">
+
+
+@if ( $hit === 0)
+<div class="search-hit">
+{{ $prefecture }} の検索結果　　<span>{{ $hit }}</span>　件ヒットしました
+</div>
+@elseif ($hit > 0)
+<div class="search-hit">
+この県の検索結果　　<span>{{ $hit }}</span>　件ヒットしました
+</div>
+@endif
+
+
+<!-- <ul class="practice">
+
 <li><a href=""><div class="practice-space-list">
-<p>練習題名</p>
-<p>練習場所</p>
-<p>練習日時</p>
-<p>チーム名（任意）</p>
-<p>規模（人数など）</p>
-<p>参加費</p>
-<p>レベル感</p>
-<p>説明</p>
-
-
-
 </div></a></li>
-<li><a href=""><div class="practice-space-list">練習1</div></a></li>
-<li><a href=""><div class="practice-space-list">練習1</div></a></li>
-<li><a href=""><div class="practice-space-list">練習1</div></a></li>
-<li><a href=""><div class="practice-space-list">練習1</div></a></li>
-<li><a href=""><div class="practice-space-list">練習1</div></a></li>
-<li><a href=""><div class="practice-space-list">練習1</div></a></li>
-</ul>
 
-
-
-
-<ul class="practice">
+</ul> -->
 @foreach($practice_list as $practice)
-
-<li><a href=""><div class="practice-space-list">
-<p>練習場所:{{ $practice->place }}</p>
-<p>練習日時:{{ $practice->practice_time }}</p>
-<p>チーム名:{{ $practice->name }}</p>
-<p>規模（人数など）:{{ $practice->scale }}</p>
-<p>レベル感:{{ $practice->level }}</p>
-<p>参加費:{{ $practice->entry_fee }}</p>
-<p>説明:{{ $practice->explanation }}</p>
-<p>投稿者:{{ $practice->contributor }}</p>
-
-</div></a></li>
+<section class="practice">
+<table width="100%">
+  <tr>
+    <th width="20%" class="th-left">NO.1</th><th width="80%">詳細</th>
+  </tr>
+  <tr>
+  <tr>
+    <td width="20%" class="th-left">練習場所</td><td width="80%">{{ $practice->place }}</td>
+  </tr>
+  <tr>
+    <td class="th-left">練習日時</td><td>{{ $practice->practice_time }}</td>
+  </tr>
+  <tr>
+    <td class="th-left">チーム名</td><td>{{ $practice->name }}</td>
+  </tr>
+  <tr>
+    <td class="th-left">規模（人数など）</td><td>{{ $practice->level }}</td>
+  </tr>
+  <tr>
+    <td class="th-left">レベル感</td><td>{{ $practice->level }}</td>
+  </tr>
+  <tr>
+    <td class="th-left">参加費</td><td>{{ $practice->entry_fee }}</td>
+  </tr>
+  <tr>
+    <td class="th-left">説明</td><td>{{ $practice->explanation }}</td>
+  </tr>
+  <tr>
+    <td class="th-left">投稿者</td><td>{{ $practice->contributor }}</td>
+  </tr>
+  <tr>
+    <td class="th-left">連絡先・SNSなど</td><td>追加中....</td>
+  </tr>
+</table>
+</section>
 @endforeach
-</ul>
-
-
 
 
 
